@@ -19,11 +19,9 @@
     "@angular/platform-browser-dynamic": "^16.0.0",
     "@angular/router": "^16.1.6",
     "@ionic/angular": "^7.2.0",
-    "@types/swiper": "^6.0.0",
     "date-fns": "^2.30.0",
     "ngx-daterangepicker-material": "^6.0.4",
     "rxjs": "~7.8.0",
-    "swiper": "^10.0.4",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
   },
