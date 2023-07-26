@@ -1,0 +1,72 @@
+@import "../../../styles/variables";
+@import "../../../styles/media";
+
+header {
+  justify-content: space-around;
+  background-color: $c-black;
+  padding: 15px 15px 0 15px;
+  align-items: center;
+  position: fixed;
+  display: flex;
+  height: 70px;
+  z-index: 10;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+
+.content {
+  background-color: $c-black;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 200px;
+  position: fixed;
+  display: flex;
+  height: 100vh;
+  z-index: 10;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+
+button {
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  display: flex;
+  padding: 20px;
+
+  &.red {
+    background-color: $c-red;
+    border-radius: 50px;
+    align-self: center;
+    height: 40px;
+    width: 200px;
+  }
+}
+
+.link {
+  background-color: $c-red;
+  justify-content: center;
+  align-items: center;
+  color: $c-white;
+  display: flex;
+  padding: 10px;
+  width: 100%;
+}
+
+.icon {
+  margin-left: 5px;
+  font-size: 24px;
+
+  &--nav {
+    margin-right: 10px;
+    margin-left: 0px;
+  }
+}
+
+app-logo {
+  @include media("<=phone") {
+    max-width: 200px;
+  }
+}

@@ -1,0 +1,25 @@
+<section>
+  <div class="wrapper">
+    <!-- * Search by name -->
+    <input
+      type="text"
+      [(ngModel)]="name"
+      (input)="filterByName()"
+      placeholder="Enter name"
+    />
+    <!-- * Search by year -->
+    <div class="year-list">
+      <select [(ngModel)]="startYear" (change)="filterByDate()">
+        <option *ngFor="let year of yearsList" [ngValue]="year">
+          {{ year }}
+        </option>
+      </select>
+      <span> - </span>
+      <select [(ngModel)]="endYear" (change)="filterByDate()">
+        <option *ngFor="let year of yearsList" [value]="year">
+          {{ year }}
+        </option>
+      </select>
+    </div>
+  </div>
+</section>

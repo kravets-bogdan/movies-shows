@@ -1,0 +1,72 @@
+<ng-container *ngIf="!isMobileMode; else mobileHeader">
+  <header>
+    <nav class="content">
+      <!-- * Logo -->
+      <app-logo></app-logo>
+      <div class="navigation" *ngIf="showNavigation">
+        <a
+          class="link"
+          routerLink="/movies"
+          [class.active-link]="showNavigation === 'series'"
+        >
+          <img
+            alt="movies"
+            class="icon icon--nav"
+            src="assets/images/icon-movies.png"
+          />
+          <span>Movies</span>
+        </a>
+        <a
+          class="link"
+          routerLink="/series"
+          [class.active-link]="showNavigation === 'series'"
+        >
+          <img
+            alt="series"
+            class="icon icon--nav"
+            src="assets/images/icon-series.png"
+          />
+          <span>Series</span>
+        </a>
+      </div>
+    </nav>
+    <div class="content">
+      <div
+        class="button"
+        *ngIf="showNavigation"
+        [class.button--active]="isShowFilter"
+      >
+        <div class="line"></div>
+        <button type="button" (click)="isShowFilter = !isShowFilter">
+          <img
+            alt="filter"
+            class="icon icon--nav"
+            src="assets/images/icon-filter.png"
+          />
+          <span>Filters</span>
+        </button>
+      </div>
+      <div class="line"></div>
+      <button type="button">
+        <span>Login</span>
+        <img alt="login" class="icon" src="assets/images/icon-login.png" />
+      </button>
+      <div class="line"></div>
+      <button class="red" type="button">
+        <span>Start your free trial</span>
+      </button>
+    </div>
+    <!-- * Filters -->
+    <ng-container *ngIf="showNavigation && isShowFilter">
+      <app-filters></app-filters>
+    </ng-container>
+  </header>
+</ng-container>
+
+<!-- * Mobile header -->
+<ng-template #mobileHeader>
+  <app-mobile-header
+    [MobileMode]="isMobileMode"
+    (ShowFilter)="(isShowFilter)"
+  ></app-mobile-header>
+</ng-template>

@@ -1,0 +1,100 @@
+@import "../../../styles/variables";
+@import "../../../styles/media";
+
+img {
+  max-width: -moz-fit-content;
+  vertical-align: middle;
+  max-width: fit-content;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+}
+
+.block {
+  grid-template-columns: repeat(5, 1fr);
+  position: relative;
+  display: grid;
+  grid-gap: 8px;
+}
+
+.item {
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    .text-content {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .title {
+      opacity: 0;
+    }
+  }
+}
+
+.title {
+  background-color: rgba($c-black, 0.8);
+  transition: opacity $t-normal;
+  position: absolute;
+  font-weight: 600;
+  padding: 10px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  @include media("<=desktop") {
+    font-size: 12px;
+  }
+
+  @include media("<=phone") {
+    font-size: 8px;
+  }
+}
+
+.text-content {
+  background-color: rgba($c-black, 0.8);
+  transition: opacity $t-normal;
+  flex-direction: column;
+  position: absolute;
+  font-size: 14px;
+  display: flex;
+  padding: 10px;
+  opacity: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  span {
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 10px;
+  }
+
+  @include media("<=tablet") {
+    span {
+      font-size: 10px;
+    }
+
+    p {
+      font-size: 8px;
+    }
+  }
+
+  @include media("<=phone") {
+    span {
+      font-size: 6px;
+    }
+
+    p {
+      font-size: 4px;
+    }
+  }
+}
+
+h2 {
+  margin-bottom: 20px;
+}

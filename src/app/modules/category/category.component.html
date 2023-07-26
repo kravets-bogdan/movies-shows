@@ -1,0 +1,21 @@
+<section *ngIf="list">
+  <h2>Popular {{ category }}</h2>
+  <div class="block">
+    <div class="item" *ngFor="let item of currentPageItems">
+      <img [src]="item.images.posterArt.url" [alt]="item.title" />
+      <span class="title">{{ item.title }}</span>
+      <div class="text-content">
+        <span>{{ item.title }}</span>
+        <span>{{ item.releaseYear }}</span>
+        <p>{{ item.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- * Paginator -->
+<app-paginator
+  (pageChange)="onPageChange($event)"
+  [currentPage]="currentPage"
+  [totalPages]="totalPages"
+></app-paginator>

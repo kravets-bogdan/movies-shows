@@ -1,0 +1,45 @@
+<header>
+  <!-- * Logo -->
+  <app-logo></app-logo>
+  <div class="content" *ngIf="MobileMode ? isShowNavigation : true">
+    <a class="link" routerLink="/movies" (click)="closeNavigation()">
+      <img
+        alt="movies"
+        class="icon icon--nav"
+        src="assets/images/icon-movies.png"
+      />
+      <span>Movies</span>
+    </a>
+    <a class="link" routerLink="/series" (click)="closeNavigation()">
+      <img
+        alt="series"
+        class="icon icon--nav"
+        src="assets/images/icon-series.png"
+      />
+      <span>Series</span>
+    </a>
+    <button type="button" (click)="toggleFilter()">
+      <img
+        alt="filter"
+        class="icon icon--nav"
+        src="assets/images/icon-filter.png"
+      />
+      <span>Filters</span>
+    </button>
+    <button type="button" (click)="closeNavigation()">
+      <span>Login</span>
+      <img alt="login" class="icon" src="assets/images/icon-login.png" />
+    </button>
+    <button class="red" type="button" (click)="closeNavigation()">
+      <span>Start your free trial</span>
+    </button>
+  </div>
+  <!-- Burger -->
+  <app-burger
+    (toggle)="toggleNavigation()"
+    [isOpen]="isShowNavigation"
+    *ngIf="MobileMode"
+  ></app-burger>
+  <!-- * Filters -->
+  <app-filters *ngIf="isShowFilter"></app-filters>
+</header>

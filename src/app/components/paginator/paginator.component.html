@@ -1,0 +1,23 @@
+<section>
+  <button
+    (click)="onPageChange(currentPage - 1)"
+    [disabled]="currentPage === 1"
+  >
+    <span class="arrow"> &#8249; </span>
+  </button>
+  <button
+    [disabled]="currentPage === page"
+    *ngFor="let page of pages"
+    (click)="onPageChange(page)"
+  >
+    <span class="pages">
+      {{ page }}
+    </span>
+  </button>
+  <button
+    (click)="onPageChange(currentPage + 1)"
+    [disabled]="currentPage === totalPages"
+  >
+    <span class="arrow"> &#8250; </span>
+  </button>
+</section>

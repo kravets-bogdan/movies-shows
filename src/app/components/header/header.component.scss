@@ -1,0 +1,99 @@
+@import "../../../styles/variables";
+@import "../../../styles/media";
+
+header {
+  justify-content: space-around;
+  background-color: $c-black;
+  padding: 15px 15px 0 15px;
+  align-items: center;
+  position: fixed;
+  display: flex;
+  height: 70px;
+  z-index: 10;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+
+nav {
+  align-items: center;
+  display: flex;
+}
+
+ul {
+  display: flex;
+}
+
+li {
+  margin-right: 40px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.content {
+  display: flex;
+  height: 100%;
+}
+
+button {
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-right: 20px;
+  display: flex;
+
+  &.red {
+    background-color: $c-red;
+    border-radius: 50px;
+    align-self: center;
+    height: 40px;
+    width: 200px;
+  }
+}
+
+.icon {
+  margin-left: 5px;
+  font-size: 24px;
+
+  &--nav {
+    margin-right: 10px;
+    margin-left: 0px;
+  }
+}
+
+.link {
+  justify-content: center;
+  align-items: center;
+  color: $c-white;
+  display: flex;
+  padding: 10px;
+}
+
+.active-link {
+  background-color: $c-red;
+}
+
+.navigation {
+  margin-left: 15px;
+  display: flex;
+  height: 100%;
+}
+
+.line {
+  transform: rotateX("45deg");
+  background: $c-white;
+  margin-right: 20px;
+  height: 40px;
+  width: 1px;
+}
+
+.button {
+  border-bottom: 2px solid transparent;
+  display: flex;
+
+  &--active {
+    border-bottom: 2px solid $c-red;
+  }
+}
